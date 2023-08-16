@@ -7,6 +7,8 @@ No software deverá ser possivel criar tarefas e nelas, definir/alterar horarios
 
 ## Protótipo
 
+https://www.figma.com/file/TfkyaYtpGQhmi7wTc60kDW/Agendador-de-tarefas-diarias?type=design&node-id=0-1&mode=design
+
 ## Checklist
 
 - [ ] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
