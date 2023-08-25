@@ -28,13 +28,8 @@ hr {
   border-width: medium;
 }
 
-.my-invalid-input {
-  border-color: red !important;
-  border-left-width: medium !important;
-}
-
 .my-font {
-  font-family: "airborne";
+  font-family: "Roboto";
 }
 
 .my-header {
