@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild, } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'agendador-tarefas-utfpr-angular';
+  currentDate: Date;
+
+  constructor() {
+    this.currentDate = new Date();
+  }
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.currentDate = new Date();
+    }, 1000);
+  }
 }
