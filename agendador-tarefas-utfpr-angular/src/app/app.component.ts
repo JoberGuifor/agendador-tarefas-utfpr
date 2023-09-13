@@ -26,7 +26,7 @@ export class AppComponent implements AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-      let $sideNav = $('#mobile-demo');
+     // let $sideNav = $('#mobile-demo');
   }
 
   onClick(){

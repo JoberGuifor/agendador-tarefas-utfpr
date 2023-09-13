@@ -1,0 +1,30 @@
+
+<app-date-select [value]="this.descricaoData"></app-date-select>
+
+<div class="col s12 m7">
+    <h4 class="header">Evento 1</h4>
+    <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Descrição da tarefa.</p>
+        </div>
+        <div class="card-action">
+          <a [routerLink]="['/task']" [queryParams]="{id: 1}">editar</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="col s12 m7">
+    <h4 class="header">Evento 2</h4>
+    <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>Descrição da tarefa.</p>
+        </div>
+        <div class="card-action">
+            <a [routerLink]="['/task']" [queryParams]="{id: 2}">editar</a>
+        </div>
+      </div>
+    </div>
+</div>
