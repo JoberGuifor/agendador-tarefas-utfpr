@@ -4,6 +4,10 @@
       id="div-panel"
     >
         <p>{{ this.value }}</p>
-        <input type = "date" class = "datepicker" />  
+        <input type = "date" 
+          class = "datepicker" 
+          [(ngModel)]="dataSelecionada" 
+          required
+          (change)="changeDate()"/>  
     </div>
   </div>

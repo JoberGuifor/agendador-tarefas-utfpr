@@ -1,16 +1,76 @@
 
 <div class="container contact">
 
-    <app-date-select [value]="this.descricaoData"></app-date-select>
+    <app-date-select [value]="this.descricaoData" [dataEvento]="this.task.date"></app-date-select>
     
-    <p>Editando: {{ this.editando }} código: {{ this.id }} </p>
-    <!--
-    <app-balance-tasks [value]="this.totalTasks"
-    #balance
-    (dblclick)="
-        balance.getBackgroundColor() == 'amber'
-          ? balance.onDblClickBalance('blue')
-          : balance.onDblClickBalance('amber')
-      "></app-balance-tasks>-->
+    <div class="row">
+        <div class="col s12">
+          <div
+            id="div-deposit-message"
+            class="card-panel white-text"
+            [hidden]="!this.taskMessage"
+            [class.red]="this.taskInvalid"
+            [class.blue]="!this.taskInvalid"
+          >
+            {{ this.taskMessage }}
+          </div>
+        </div>
+        <form class="col s12" #form="ngForm" (submit)="onSubmit()">
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input
+                id="input-hrstart-task"
+                name="input-hrstart-task"
+                type = "time" class = "datepicker" 
+                [(ngModel)]="task.hourStart"
+                required
+              />
+              <label for="input-hrstart-task" class="active">De:</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                id="input-hrfinish-task"
+                name="input-hrfinish-task"
+                type = "time" class = "datepicker" 
+                [(ngModel)]="task.hourFinish"
+                required
+              />
+              
+              <label for="input-hrfinish-task" class="active">Até:</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input
+                id="input-description-task"
+                name="input-description-task"
+                type="text"
+                class="validate"
+                [(ngModel)]="task.description"
+                #description="ngModel"
+                required
+              />
+              <label for="input-description-task" class="active">Descrição da tarefa</label>
+
+              <div class="red-text" [hidden]="description.valid || description.untouched">
+                Por favor, informe o seu nome completo.
+              </div>
+
+              
+
+            </div>
+          </div>
+          <button class="btn waves-effect waves-light darken-4" 
+          type="submit"
+          [disabled]="!form.valid">
+            Gravar
+            <i class="material-icons right">send</i>
+          </button>
+
+        </form>
+        
+      </div>
 
 </div>

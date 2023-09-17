@@ -4,9 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href=/agendador-tarefas-utfpr-angular/",
+    "ghpages": "angular-cli-ghpages --dir=dist/agendador-tarefas-utfpr-angular",
+    "deploy": "npm run build & npm run ghpages",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "json:server": "json-server --watch db.json",
+    "json:server:routes": "json-server --watch db.json --routes routes.json"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +23,8 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.4",
+    "angular-cli-ghpages": "^1.0.7",
+    "json-server": "^0.17.3",
     "material-icons": "^1.13.11",
     "materialize-css": "^1.0.0",
     "ngx-mask": "^13.1.10",

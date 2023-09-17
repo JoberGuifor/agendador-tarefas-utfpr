@@ -12,16 +12,29 @@ import { AfterContentChecked,
   templateUrl: './date-select.component.html',
   styleUrls: ['./date-select.component.css']
 })
-export class DateSelectComponent implements OnInit, OnChanges{
+export class DateSelectComponent implements OnInit, OnChanges {
   @Input() value: string = "Eventos do dia:";
-  @Output() dateChangeEvent = new EventEmitter<boolean>();
+  @Input() dataEvento: Date = new Date();
+  @Output() dateChangeEvent = new EventEmitter<Date>();
+  
+  dataSelecionada: Date = new Date();
 
-  constructor() {}
-
-  ngOnChanges(): void {
-      this.dateChangeEvent.emit(true);
+  constructor() {
+    this.dataSelecionada = this.dataEvento;
   }
 
-  ngOnInit(): void {}
+  ngOnChanges(): void {
+    console.log("alterou data");
+      this.dateChangeEvent.emit(this.dataSelecionada);
+  }
+
+  changeDate(): void {
+    console.log("alterou data");
+      this.dateChangeEvent.emit(this.dataSelecionada);
+  }
+
+  ngOnInit(): void {
+    console.log(this.dataEvento);
+  }
 
 }
