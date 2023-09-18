@@ -67,7 +67,7 @@ export class TaskComponent  implements OnInit, AfterViewInit {
 
   onSubmit() {
     
-    this.task.date = this.dateSelectComponent.dataEvento;
+    this.task.date = this.dateSelectComponent.dataSelecionada;
 
     if(this.editando){
       this.taskService.saveOrUpdate(this.task).subscribe(
