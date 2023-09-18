@@ -1,0 +1,13 @@
+<div class="row">
+    <div
+      class="col s12 m6 offset-m3 card-panel"
+      id="div-panel"
+    >
+        <p>{{ this.value }}</p>
+        <input type = "date" 
+          class = "datepicker" 
+          [(ngModel)]="dataSelecionada" 
+          required
+          (change)="changeDate()"/>  
+    </div>
+  </div>

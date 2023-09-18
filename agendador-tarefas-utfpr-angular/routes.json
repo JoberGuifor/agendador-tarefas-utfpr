@@ -1,0 +1,4 @@
+{
+  "/tasks": "/tasks",
+  "/tasks/date/:d": "/tasks?date=:d"
+}
